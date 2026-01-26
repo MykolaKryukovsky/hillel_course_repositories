@@ -34,6 +34,8 @@ class Group:
         self.group = set()
 
     def add_student(self, student):
+        if len(self.group) >= 10:
+            raise ValueError('LIMIT REACHED: MAX 10 STUDENTS!')
         self.group.add(student)
 
     def delete_student(self, last_name):
