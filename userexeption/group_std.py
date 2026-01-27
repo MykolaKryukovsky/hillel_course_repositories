@@ -23,6 +23,12 @@ class Student(Human):
     def __str__(self):
         return f'{super().__str__()} (Record: {self.record_book})'
 
+class GroupLimitError(Exception):
+
+    def __init__(self, message='LIMIT REACHED: MAX 10 STUDENTS!'):
+        self.message = message
+        super().__init__(self.message)
+
 class Group:
     """
     A class whose instance consists of objects of the Student class
@@ -35,7 +41,7 @@ class Group:
 
     def add_student(self, student):
         if len(self.group) >= 10:
-            raise ValueError('LIMIT REACHED: MAX 10 STUDENTS!')
+            raise GroupLimitError('LIMIT REACHED: MAX 10 STUDENTS!')
         self.group.add(student)
 
     def delete_student(self, last_name):

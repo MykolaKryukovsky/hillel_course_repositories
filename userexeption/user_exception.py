@@ -1,4 +1,4 @@
-from group_std import gr, Student
+from group_std import gr, Student, GroupLimitError
 
 st3 = Student('Female', 20, 'Inga', 'Bergström', 'AN144')
 st4 = Student('Male', 475, 'Duncan ', 'MacLeod', 'AN150')
@@ -16,5 +16,5 @@ for student in students_to_add:
     try:
         gr.add_student(student)
         print(student)
-    except ValueError as e:
+    except GroupLimitError as e:
         print(e)
