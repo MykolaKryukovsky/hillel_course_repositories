@@ -3,7 +3,7 @@ from group import Group
 
 
 
-class main():
+class Main:
     st1 = Student('Male', 475, 'Duncan ', 'MacLeod', 'AN150')
     st2 = Student('Male', 32, 'John', 'Rambo', 'AN170')
     st3 = Student('Female', 32, 'Sarah', 'Connor', 'AN144')
